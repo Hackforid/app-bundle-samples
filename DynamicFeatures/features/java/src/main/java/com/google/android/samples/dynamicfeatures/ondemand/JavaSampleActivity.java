@@ -17,10 +17,12 @@
 package com.google.android.samples.dynamicfeatures.ondemand;
 
 import android.os.Bundle;
-import com.google.android.samples.dynamicfeatures.BaseSplitActivity;
-import com.google.android.samples.dynamicfeatures.ondemand.java.R;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+
+import com.google.android.samples.dynamicfeatures.BaseSplitActivity;
+import com.google.android.samples.dynamicfeatures.ondemand.java.R;
 
 /** A simple activity displaying text written in Java. */
 public class JavaSampleActivity extends BaseSplitActivity {
@@ -29,6 +31,7 @@ public class JavaSampleActivity extends BaseSplitActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feature_java);
+        getWindow().getDecorView().setOnClickListener(v -> Toast.makeText(JavaSampleActivity.this, "test lambda", Toast.LENGTH_SHORT).show());
     }
 
 }
